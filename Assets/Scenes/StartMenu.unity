@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 1654231419}
   - component: {fileID: 1654231418}
   m_Layer: 0
-  m_Name: Summer7
+  m_Name: main_menu_bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
