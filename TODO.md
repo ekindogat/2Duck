@@ -1,26 +1,45 @@
-# Example of TODO.md
-
-
-
 ### Todo
 
-- [ ] Her feature için git branch
-- [ ] Gameloop (Başlangıç - Oyun bitirme mekanikleri)
+
 - [ ] Anamenü - Sahneler - Arayüz
   - [ ] Anamenü arkaplanı
   - [ ] Anamenü
   - [ ] Sahne geçiş
-- [ ] Karakter Tasarımı ve Mekanikleri
+  - [ ] Müzik (opt)
+
+- [ ] Save sistemi
+
+- [ ] Cursor / Player
+  - [ ] Cursor FX
+  - [ ] Cursor tasarımı
+  - [ ] Cursor Script
+
 - [ ] Bölüm tasarımı
-- [ ] Ses
+  - [ ] Gölet arkaplanı
+  - [ ] Nilüfer
+  - [ ] Karakter
+  - [ ] Ses
+  - [ ] Müzik (opt)
+
+
+  
+- [ ] Gameloop (Başlangıç - Oyun bitirme mekanikleri)
+
 
 ### In Progress
 
-- [ ] Anamenü arkaplanı
-- [ ] Anamenü
-- [ ] Sahne geçiş
+- [ ] Her feature için git branch
+
+- [ ] Anamenü - Sahneler - Arayüz
+  - [x] Anamenü arkaplanı
+  - [ ] Anamenü
+  - [ ] Sahne geçiş
+
 
 ### Done ✓
 
+### 07/07/24
 - [x] TODO.md oluşturuldu
+- [x] Oyun planı yeniden tasarlandı
+- [x] Font
 

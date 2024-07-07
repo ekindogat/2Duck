@@ -1,2 +1,2 @@
 # 2Duck
-Mini 2D platform game project for teaching basic Git practices
+Mini duck clicker game project for teaching basic Git practices
