@@ -1,7 +1,7 @@
 ### Todo
 
 
-- [ ] Anamenü - Sahneler - Arayüz
+- [x] Anamenü - Sahneler - Arayüz
   - [x] Anamenü arkaplanı
   - [x] Anamenü
   - [x] Sahne geçiş
