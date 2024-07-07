@@ -2,12 +2,10 @@
 
 
 - [ ] Anamenü - Sahneler - Arayüz
-  - [ ] Anamenü arkaplanı
-  - [ ] Anamenü
-  - [ ] Sahne geçiş
+  - [x] Anamenü arkaplanı
+  - [x] Anamenü
+  - [x] Sahne geçiş
   - [ ] Müzik (opt)
-
-- [ ] Save sistemi
 
 - [ ] Cursor / Player
   - [ ] Cursor FX
@@ -15,30 +13,32 @@
   - [ ] Cursor Script
 
 - [ ] Bölüm tasarımı
-  - [ ] Gölet arkaplanı
-  - [ ] Nilüfer
+  - [x] Gölet arkaplanı
+  - [x] Nilüfer
   - [ ] Karakter
   - [ ] Ses
   - [ ] Müzik (opt)
 
+- [ ] Scriptler
+  - [ ] Cursor
+  - [x] Sahne geçişi
+  - [ ] UI - Skor
 
-  
 - [ ] Gameloop (Başlangıç - Oyun bitirme mekanikleri)
-
+- [ ] Save sistemi
 
 ### In Progress
 
 - [ ] Her feature için git branch
 
-- [ ] Anamenü - Sahneler - Arayüz
-  - [x] Anamenü arkaplanı
-  - [ ] Anamenü
-  - [ ] Sahne geçiş
 
 
 ### Done ✓
 
 ### 07/07/24
+- [x] Anamenü arkaplanı
+- [x] Anamenü
+- [x] Sahne geçiş
 - [x] TODO.md oluşturuldu
 - [x] Oyun planı yeniden tasarlandı
 - [x] Font
