@@ -7,20 +7,20 @@
   - [x] Sahne geçiş
   - [ ] Müzik (opt)
 
-- [ ] Cursor / Player
-  - [ ] Cursor FX
-  - [ ] Cursor tasarımı
-  - [ ] Cursor Script
+- [x] Cursor / Player
+  - [x] Cursor FX
+  - [x] Cursor tasarımı
+  - [x] Cursor Script
 
-- [ ] Bölüm tasarımı
+- [x] Bölüm tasarımı
   - [x] Gölet arkaplanı
   - [x] Nilüfer
-  - [ ] Karakter
-  - [ ] Ses
+  - [x] Karakter
+  - [x] Ses
   - [ ] Müzik (opt)
 
 - [ ] Scriptler
-  - [ ] Cursor
+  - [x] Cursor
   - [x] Sahne geçişi
   - [ ] UI - Skor
 
@@ -34,6 +34,18 @@
 
 
 ### Done ✓
+
+### 08/07/24
+- [x] Bölüm tasarımı
+  - [x] Gölet arkaplanı
+  - [x] Nilüfer
+  - [x] Karakter
+  - [x] Ses
+- [x] Cursor / Player
+  - [x] Cursor FX
+  - [x] Cursor tasarımı
+  - [x] Cursor Script
+
 
 ### 07/07/24
 - [x] Anamenü arkaplanı
