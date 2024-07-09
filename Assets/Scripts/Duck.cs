@@ -7,7 +7,7 @@ public class Duck : MonoBehaviour
     public Animator animator;
     public AudioClip clickSound; // Assign this in the Inspector
     public string animationTriggerName = "Clicked";
-    public string animationStateName = "Idle"; // The state to revert to after the click animation
+    public string animationStateName = "Base Layer.duck_idle"; // The state to revert to after the click animation
     public string animationBoolName = "isAnimating";
 
     private AudioSource audioSource;
@@ -57,10 +57,10 @@ public class Duck : MonoBehaviour
         yield return new WaitForSeconds(1);
         
         // Reset the animation state
-        if (animator != null)
-        {
-            animator.Play(animationStateName, 0, 0f);
-        }
+        // if (animator != null)
+        // {
+        //     animator.Play(animationStateName, 0, 0f);
+        // }
         
         isAnimating = false;
         animator.SetBool(animationBoolName, isAnimating);
