@@ -38,6 +38,7 @@ public class Duck : MonoBehaviour
         {
             Debug.LogWarning("Click sound is not assigned.");
         }
+        // Start default score text
         scoreText.text = "Score: "+score.ToString();
     }
 
@@ -48,7 +49,7 @@ public class Duck : MonoBehaviour
         {
             isAnimating = true;
             animator.SetBool(animationBoolName, isAnimating);
-            // Trigger the animation
+            // Trigger the "Quack" animation
             if (animator != null)
             {
                 animator.SetTrigger(animationTriggerName);
@@ -58,7 +59,9 @@ public class Duck : MonoBehaviour
             audioSource.Play();
             StartCoroutine(WaitForSoundAndReset(audioSource.clip.length));
         }
-        SpawnQuack();   
+        // FX when on click
+        SpawnQuack();
+        // Add 1 to curr score
         UpdateScore(1);     
     }
 
@@ -72,9 +75,11 @@ public class Duck : MonoBehaviour
         //     animator.Play(animationStateName, 0, 0f);
         // }
         
+        // Return to idle animation
         isAnimating = false;
         animator.SetBool(animationBoolName, isAnimating);
-
+        
+        // Bug fix for spammed click results unnecessary animation
         animator.ResetTrigger(animationTriggerName);
     }
 
@@ -89,12 +94,12 @@ public class Duck : MonoBehaviour
             RectTransform quackTextRectTransform = quackTextInstance.GetComponent<RectTransform>();
 
             // Calculate random position within canvas bounds
-            float randomX = Random.Range(-canvasRectTransform.rect.width / 2, canvasRectTransform.rect.width / 2);
-            float randomY = Random.Range(-canvasRectTransform.rect.height / 2, canvasRectTransform.rect.height / 2);
+            float randomX = Random.Range((-canvasRectTransform.rect.width / 2) , (canvasRectTransform.rect.width / 2) );
+            float randomY = Random.Range((-canvasRectTransform.rect.height / 2) , (canvasRectTransform.rect.height / 2) );
             quackTextRectTransform.anchoredPosition = new Vector2(randomX, randomY);
 
             // Optionally destroy the text after a certain time
-            Destroy(quackTextInstance, 2f); // Adjust the duration as needed
+            Destroy(quackTextInstance, 1.5f); // Adjust the duration as needed
         }
         else
         {
