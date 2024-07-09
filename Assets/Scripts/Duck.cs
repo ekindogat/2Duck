@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Duck : MonoBehaviour
 {
     public Animator animator;
@@ -9,6 +9,9 @@ public class Duck : MonoBehaviour
     public string animationTriggerName = "Clicked";
     public string animationStateName = "Base Layer.duck_idle"; // The state to revert to after the click animation
     public string animationBoolName = "isAnimating";
+
+    public GameObject quackTextPrefab;
+    public Canvas canvas;
 
     private AudioSource audioSource;
     private bool isAnimating = false;
@@ -50,6 +53,7 @@ public class Duck : MonoBehaviour
             audioSource.Play();
             StartCoroutine(WaitForSoundAndReset(audioSource.clip.length));
         }
+        SpawnQuack();
     }
 
     private IEnumerator WaitForSoundAndReset(float duration)
@@ -66,5 +70,29 @@ public class Duck : MonoBehaviour
         animator.SetBool(animationBoolName, isAnimating);
 
         animator.ResetTrigger(animationTriggerName);
+    }
+
+    private void SpawnQuack(){
+        if (quackTextPrefab != null && canvas != null)
+        {
+            // Instantiate the text prefab
+            GameObject quackTextInstance = Instantiate(quackTextPrefab, canvas.transform);
+
+            // Set a random position within the canvas
+            RectTransform canvasRectTransform = canvas.GetComponent<RectTransform>();
+            RectTransform quackTextRectTransform = quackTextInstance.GetComponent<RectTransform>();
+
+            // Calculate random position within canvas bounds
+            float randomX = Random.Range(-canvasRectTransform.rect.width / 2, canvasRectTransform.rect.width / 2);
+            float randomY = Random.Range(-canvasRectTransform.rect.height / 2, canvasRectTransform.rect.height / 2);
+            quackTextRectTransform.anchoredPosition = new Vector2(randomX, randomY);
+
+            // Optionally destroy the text after a certain time
+            Destroy(quackTextInstance, 2f); // Adjust the duration as needed
+        }
+        else
+        {
+            Debug.LogWarning("Quack text prefab or canvas is not assigned.");
+        }
     }
 }
