@@ -45,7 +45,7 @@ public class Duck : MonoBehaviour
             {
                 animator.SetTrigger(animationTriggerName);
             }
-
+            
             // Play the sound
             audioSource.Play();
             StartCoroutine(WaitForSoundAndReset(audioSource.clip.length));
@@ -55,14 +55,16 @@ public class Duck : MonoBehaviour
     private IEnumerator WaitForSoundAndReset(float duration)
     {
         yield return new WaitForSeconds(1);
-
+        
         // Reset the animation state
         if (animator != null)
         {
             animator.Play(animationStateName, 0, 0f);
         }
-
+        
         isAnimating = false;
         animator.SetBool(animationBoolName, isAnimating);
+
+        animator.ResetTrigger(animationTriggerName);
     }
 }
