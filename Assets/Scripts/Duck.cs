@@ -35,6 +35,7 @@ public class Duck : MonoBehaviour
 
     void OnMouseDown()
     {
+
         if (!isAnimating && audioSource.clip != null)
         {
             isAnimating = true;
@@ -53,7 +54,7 @@ public class Duck : MonoBehaviour
 
     private IEnumerator WaitForSoundAndReset(float duration)
     {
-        yield return new WaitForSeconds(duration);
+        yield return new WaitForSeconds(1);
 
         // Reset the animation state
         if (animator != null)
