@@ -6,9 +6,13 @@ public class Duck : MonoBehaviour
 {
     public Animator animator;
     public AudioClip clickSound; // Assign this in the Inspector
+    public TextMeshProUGUI scoreText;
     public string animationTriggerName = "Clicked";
     public string animationStateName = "Base Layer.duck_idle"; // The state to revert to after the click animation
     public string animationBoolName = "isAnimating";
+
+    
+    public int score = 0;    
 
     public GameObject quackTextPrefab;
     public Canvas canvas;
@@ -34,6 +38,7 @@ public class Duck : MonoBehaviour
         {
             Debug.LogWarning("Click sound is not assigned.");
         }
+        scoreText.text = "Score: "+score.ToString();
     }
 
     void OnMouseDown()
@@ -53,7 +58,8 @@ public class Duck : MonoBehaviour
             audioSource.Play();
             StartCoroutine(WaitForSoundAndReset(audioSource.clip.length));
         }
-        SpawnQuack();
+        SpawnQuack();   
+        UpdateScore(1);     
     }
 
     private IEnumerator WaitForSoundAndReset(float duration)
@@ -94,5 +100,9 @@ public class Duck : MonoBehaviour
         {
             Debug.LogWarning("Quack text prefab or canvas is not assigned.");
         }
+    }
+    public void UpdateScore(int point){
+        score += point;
+        scoreText.text = "Score: "+score.ToString();
     }
 }
