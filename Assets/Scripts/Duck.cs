@@ -51,15 +51,19 @@ public class Duck : MonoBehaviour
     }
 
     // Changes cursor when hovering on the duck
-    void OnMouseEnter(){
-         Cursor.SetCursor(onHoverCursor, Vector2.zero, CursorMode.Auto);
-    }
-    void OnMouseExit(){
-        Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
-    }
+    // void OnMouseEnter(){
+    //      Cursor.SetCursor(onHoverCursor, Vector2.zero, CursorMode.Auto);
+    // }
+    // void OnMouseExit(){
+    //     Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+    // }
+    // void OnMouseUp(){
+    //     Cursor.SetCursor(onHoverCursor, Vector2.zero, CursorMode.Auto);
+    // }
     void OnMouseDown()
     {
-        Cursor.SetCursor(clickCursor, Vector2.zero, CursorMode.Auto);
+        // Cursor.SetCursor(clickCursor, Vector2.zero, CursorMode.Auto);
+
         if (!isAnimating && audioSource.clip != null)
         {
             isAnimating = true;
@@ -80,9 +84,7 @@ public class Duck : MonoBehaviour
         GM.UpdateScore(1);
     }
 
-    void OnMouseUp(){
-        Cursor.SetCursor(onHoverCursor, Vector2.zero, CursorMode.Auto);
-    }
+    
     private IEnumerator WaitForSoundAndReset(float duration)
     {
         yield return new WaitForSeconds(1);

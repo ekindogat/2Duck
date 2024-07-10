@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
-
+using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
-    public int score;    
+    public int score = 0;    
     public TextMeshProUGUI scoreText;
     public GameObject quackTextPrefab;
     public Canvas canvas;
@@ -14,11 +15,12 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         GM = this;
+        if(SceneManager.GetActiveScene().name == "Level01")
+            StartScore(0);
     }
 
     public void StartGame(){
         SceneChanger.ChangeScene("Level01");
-        StartScore(0);
     }
 
     void StartScore(int amount){
@@ -30,7 +32,7 @@ public class GameManager : MonoBehaviour
         score += amount;
         UpdateScoreText(score.ToString());
     }
-    void UpdateScoreText(String str){
+    void UpdateScoreText(System.String str){
         scoreText.text = "Score: " + str;
     }
     public void SpawnQuack(){
