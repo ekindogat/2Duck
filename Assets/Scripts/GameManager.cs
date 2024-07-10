@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI; // UI elemanları için gerekli
 using System;
 using UnityEditor.SearchService;
 using UnityEngine.SceneManagement;
@@ -12,11 +14,42 @@ public class GameManager : MonoBehaviour
     public GameObject quackTextPrefab;
     public Canvas canvas;
     public static GameManager GM;
+    public GameObject exitConfirmationPanel; // Inspector'da atanacak
+    public Button yesButton;
+    public Button noButton;
+    private bool isExitPanelActive = false;
+    
     void Awake()
     {
         GM = this;
         if(SceneManager.GetActiveScene().name == "Level01")
             StartScore(0);
+    }
+
+    void Start()
+    {
+        // Butonlara tıklama olaylarını ekle
+        yesButton.onClick.AddListener(ReturnToMainMenu);
+        noButton.onClick.AddListener(CloseExitPanel);
+
+        // Exit panelini başlangıçta gizle
+        exitConfirmationPanel.SetActive(false);
+    }
+
+    void Update()
+    {
+        // Esc tuşuna basıldığında exit panelini aç/kapat
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isExitPanelActive)
+            {
+                CloseExitPanel();
+            }
+            else
+            {
+                OpenExitPanel();
+            }
+        }
     }
 
     public void StartGame(){
@@ -57,5 +90,32 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("Quack text prefab or canvas is not assigned.");
         }
+    }
+    void OpenExitPanel()
+    {
+        exitConfirmationPanel.SetActive(true);
+        isExitPanelActive = true;
+    }
+
+    void CloseExitPanel()
+    {
+        exitConfirmationPanel.SetActive(false);
+        isExitPanelActive = false;
+    }
+
+    void ReturnToMainMenu()
+    {
+        SceneChanger.ChangeScene("StartMenu");
+    }
+
+    void ExitGame()
+    {
+        // Oyun sonlandırma kodu
+        Application.Quit();
+
+        // Unity Editor'da oyun modunu sonlandırmak için (editörde çalıştırırken)
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
