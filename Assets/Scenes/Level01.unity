@@ -190,6 +190,67 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &272521391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 272521394}
+  - component: {fileID: 272521393}
+  - component: {fileID: 272521392}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &272521392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272521391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa9a3f8b7b85004aad94a722490de98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &272521393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272521391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8987ef9a96b8c644bd6f394e9ab58ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+  scoreText: {fileID: 886347393}
+  quackTextPrefab: {fileID: 6391350808560382856, guid: 71d5861c85d853d4980c0d2f5fade21b, type: 3}
+  canvas: {fileID: 432810730}
+--- !u!4 &272521394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272521391}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.082232796, y: 0.68657666, z: 0.9936354}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &394712298
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,10 +718,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1483174901}
-  clickSound: {fileID: 8300000, guid: 24ed0d57056216f41a268a96a401a6b3, type: 3}
   animationTriggerName: Clicked
   animationStateName: Idle
   animationBoolName: isAnimating
+  clickSound: {fileID: 8300000, guid: 24ed0d57056216f41a268a96a401a6b3, type: 3}
   score: 0
   scoreText: {fileID: 886347393}
   quackTextPrefab: {fileID: 6391350808560382856, guid: 71d5861c85d853d4980c0d2f5fade21b, type: 3}
@@ -668,6 +729,7 @@ MonoBehaviour:
   onHoverCursor: {fileID: 2800000, guid: 8219bfdc2f8e07c4087a040ba8777203, type: 3}
   clickCursor: {fileID: 2800000, guid: 4707a0f78ee00bf4eb67e767c3ada9cd, type: 3}
   defaultCursor: {fileID: 2800000, guid: 080abeeb70e6ab74c9bdd0a197385b46, type: 3}
+  GM: {fileID: 272521393}
 --- !u!65 &1483174900
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1060,3 +1122,4 @@ SceneRoots:
   - {fileID: 1196658960}
   - {fileID: 1483174903}
   - {fileID: 394712299}
+  - {fileID: 272521394}
