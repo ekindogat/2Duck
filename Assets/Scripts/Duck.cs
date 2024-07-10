@@ -63,7 +63,7 @@ public class Duck : MonoBehaviour
     void OnMouseDown()
     {
         // Cursor.SetCursor(clickCursor, Vector2.zero, CursorMode.Auto);
-
+        if (GM.isExitPanelActive) return;
         if (!isAnimating && audioSource.clip != null)
         {
             isAnimating = true;

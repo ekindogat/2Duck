@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject exitConfirmationPanel; // Inspector'da atanacak
     public Button yesButton;
     public Button noButton;
-    private bool isExitPanelActive = false;
+    public bool isExitPanelActive = false;
     
     void Awake()
     {
