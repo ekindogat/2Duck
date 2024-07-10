@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI; // UI elemanları için gerekli
 using System;
 using UnityEditor.SearchService;
-using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public int score = 0;    
@@ -28,18 +27,21 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Butonlara tıklama olaylarını ekle
+        if(SceneManager.GetActiveScene().name == "Level01")
+        {// Butonlara tıklama olaylarını ekle
+
         yesButton.onClick.AddListener(ReturnToMainMenu);
         noButton.onClick.AddListener(CloseExitPanel);
 
         // Exit panelini başlangıçta gizle
-        exitConfirmationPanel.SetActive(false);
+        exitConfirmationPanel.SetActive(false);}
     }
 
     void Update()
     {
         // Esc tuşuna basıldığında exit panelini aç/kapat
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // Yalnızca bölüm1de ise
+        if (SceneManager.GetActiveScene().name == "Level01" && Input.GetKeyDown(KeyCode.Escape))
         {
             if (isExitPanelActive)
             {
@@ -108,14 +110,5 @@ public class GameManager : MonoBehaviour
         SceneChanger.ChangeScene("StartMenu");
     }
 
-    void ExitGame()
-    {
-        // Oyun sonlandırma kodu
-        Application.Quit();
-
-        // Unity Editor'da oyun modunu sonlandırmak için (editörde çalıştırırken)
-        #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-        #endif
-    }
+    
 }

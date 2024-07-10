@@ -10,6 +10,12 @@ public class SceneChanger : MonoBehaviour
     }
 
     public static void ExitGame() {
-    Application.Quit();
+        // Oyun sonlandırma kodu
+        Application.Quit();
+
+        // Unity Editor'da oyun modunu sonlandırmak için (editörde çalıştırırken)
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
     }
 }
