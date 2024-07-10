@@ -5,7 +5,7 @@
   - [x] Anamenü arkaplanı
   - [x] Anamenü
   - [x] Sahne geçiş
-  - [ ] Müzik (opt)
+  - [x] Müzik (opt)
 
 - [x] Cursor / Player
   - [x] Cursor FX
@@ -17,23 +17,32 @@
   - [x] Nilüfer
   - [x] Karakter
   - [x] Ses
-  - [ ] Müzik (opt)
+  - [x] Müzik (opt)
 
-- [ ] Scriptler
+- [x] Scriptler
   - [x] Cursor
   - [x] Sahne geçişi
-  - [ ] UI - Skor
+  - [x] UI - Skor
 
-- [ ] Gameloop (Başlangıç - Oyun bitirme mekanikleri)
+- [x] Gameloop (Başlangıç - Oyun bitirme mekanikleri)
 - [ ] Save sistemi
 
 ### In Progress
 
-- [ ] Her feature için git branch
+- [x] Her feature için git branch
 
 
 
 ### Done ✓
+
+### 10/07/24
+- [x] Gameloop (Başlangıç - Oyun bitirme mekanikleri)
+- [x] Cursor - obje interaksiyonları
+
+### 09/07/24
+- [x] Scriptler
+- [x] UI - Skor
+- [x] Müzik (opt)
 
 ### 08/07/24
 - [x] Bölüm tasarımı
