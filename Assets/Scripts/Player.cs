@@ -7,26 +7,50 @@ public class Player : MonoBehaviour
     public Texture2D defaultCursor;
     public Texture2D clickCursor;
     public Vector2 cursorHotspot = Vector2.zero;
+    public GameObject targetGameObject; // Assign your target GameObject in the Inspector
 
-    // Start is called before the first frame update
     void Start()
     {
-        // Oyun başladığında default cursor ayarla
+        // Set default cursor at the start of the game
         Cursor.SetCursor(defaultCursor, cursorHotspot, CursorMode.Auto);
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // Mouse tıklama başladığında click cursor ayarla
+            // Perform a raycast to check if the mouse is over the target GameObject
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject == targetGameObject)
+                {
+                    // Keep the click cursor if the mouse is over the target GameObject
+                    return;
+                }
+            }
+            // Set click cursor when mouse button is pressed
             Cursor.SetCursor(clickCursor, cursorHotspot, CursorMode.Auto);
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            // Mouse tıklama bittiğinde default cursor geri ayarla
+            // Perform a raycast to check if the mouse is over the target GameObject
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                if (hit.collider.gameObject == targetGameObject)
+                {
+                    // Keep the click cursor if the mouse is over the target GameObject
+                    return;
+                }
+            }
+
+            // Set default cursor if the mouse is not over the target GameObject
             Cursor.SetCursor(defaultCursor, cursorHotspot, CursorMode.Auto);
         }
     }

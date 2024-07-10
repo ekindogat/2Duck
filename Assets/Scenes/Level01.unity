@@ -606,6 +606,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7167186850750716635, guid: 60dd42674f77799458cfd42fa0d8fd84, type: 3}
+      propertyPath: clickCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: 9ad14c22487a15a4997b5028f37d7fae, type: 3}
+    - target: {fileID: 7167186850750716635, guid: 60dd42674f77799458cfd42fa0d8fd84, type: 3}
+      propertyPath: defaultCursor
+      value: 
+      objectReference: {fileID: 2800000, guid: 080abeeb70e6ab74c9bdd0a197385b46, type: 3}
+    - target: {fileID: 7167186850750716635, guid: 60dd42674f77799458cfd42fa0d8fd84, type: 3}
+      propertyPath: targetGameObject
+      value: 
+      objectReference: {fileID: 1483174898}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -646,13 +658,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1483174901}
   clickSound: {fileID: 8300000, guid: 24ed0d57056216f41a268a96a401a6b3, type: 3}
-  scoreText: {fileID: 886347393}
   animationTriggerName: Clicked
   animationStateName: Idle
   animationBoolName: isAnimating
   score: 0
+  scoreText: {fileID: 886347393}
   quackTextPrefab: {fileID: 6391350808560382856, guid: 71d5861c85d853d4980c0d2f5fade21b, type: 3}
   canvas: {fileID: 432810730}
+  onHoverCursor: {fileID: 2800000, guid: 8219bfdc2f8e07c4087a040ba8777203, type: 3}
+  clickCursor: {fileID: 2800000, guid: 4707a0f78ee00bf4eb67e767c3ada9cd, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 080abeeb70e6ab74c9bdd0a197385b46, type: 3}
 --- !u!65 &1483174900
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -6,19 +6,22 @@ public class Duck : MonoBehaviour
 {
     public Animator animator;
     public AudioClip clickSound; // Assign this in the Inspector
-    public TextMeshProUGUI scoreText;
+    
     public string animationTriggerName = "Clicked";
     public string animationStateName = "Base Layer.duck_idle"; // The state to revert to after the click animation
     public string animationBoolName = "isAnimating";
-
+    private AudioSource audioSource;
+    private bool isAnimating = false;
     
     public int score = 0;    
-
+    public TextMeshProUGUI scoreText;
     public GameObject quackTextPrefab;
     public Canvas canvas;
 
-    private AudioSource audioSource;
-    private bool isAnimating = false;
+    public Texture2D onHoverCursor;
+    public Texture2D clickCursor;
+    public Texture2D defaultCursor;
+
 
     void Start()
     {
@@ -42,9 +45,16 @@ public class Duck : MonoBehaviour
         scoreText.text = "Score: "+score.ToString();
     }
 
+    // Changes cursor when hovering on the duck
+    void OnMouseEnter(){
+         Cursor.SetCursor(onHoverCursor, Vector2.zero, CursorMode.Auto);
+    }
+    void OnMouseExit(){
+        Cursor.SetCursor(defaultCursor, Vector2.zero, CursorMode.Auto);
+    }
     void OnMouseDown()
     {
-
+        Cursor.SetCursor(clickCursor, Vector2.zero, CursorMode.Auto);
         if (!isAnimating && audioSource.clip != null)
         {
             isAnimating = true;
@@ -62,9 +72,12 @@ public class Duck : MonoBehaviour
         // FX when on click
         SpawnQuack();
         // Add 1 to curr score
-        UpdateScore(1);     
+        UpdateScore(1);
     }
 
+    void OnMouseUp(){
+        Cursor.SetCursor(onHoverCursor, Vector2.zero, CursorMode.Auto);
+    }
     private IEnumerator WaitForSoundAndReset(float duration)
     {
         yield return new WaitForSeconds(1);
